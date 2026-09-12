@@ -2,7 +2,7 @@ from src.main import main
 
 
 def test_exit_option_closes_application(monkeypatch, capsys):
-    monkeypatch.setattr("builtins.input", lambda _: "3")
+    monkeypatch.setattr("builtins.input", lambda _: "5")
 
     main()
 
@@ -12,7 +12,7 @@ def test_exit_option_closes_application(monkeypatch, capsys):
 
 
 def test_invalid_option_shows_error(monkeypatch, capsys):
-    inputs = iter(["invalid", "3"])
+    inputs = iter(["invalid", "5"])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     main()
@@ -27,7 +27,7 @@ def test_user_can_add_and_list_a_task(monkeypatch, capsys):
             "1",
             "Learn Git",
             "2",
-            "3",
+            "5",
         ]
     )
 
